@@ -8,21 +8,25 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LogoComponent } from './logo/logo.component';
 import { MenuComponent } from './menu/menu.component';
+import { AboutComponent } from './about/about.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
     HeaderComponent,
     FooterComponent,
     LogoComponent,
-    MenuComponent
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AboutComponent,
+    ContactsComponent,
+    MainComponent,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
