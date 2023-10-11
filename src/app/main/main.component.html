@@ -2,11 +2,15 @@
   <div class="main__title">Главная</div>
   <div class="main__content">
     <div class="main__text">{{ name }}</div>
-    <button class="main__button" (click)="sayName()">Кнопка</button>
-    <button class="main__button" (click)="say('Hell World')">Кнопка2</button>
+    <button class="main__button" (click)="handleClick()">Кнопка2</button>
+    <input
+      type="text"
+      placeholder="Поиск"
+      class="main__input"
+      (change)="handleSearch($event)"
+    />
     <div *ngFor="let item of data">
-      <div>{{ item.title }}</div>
-      <div>{{ item.description }}</div>
+      <div>{{ item["#TITLE"] }}</div>
     </div>
   </div>
 </div>
