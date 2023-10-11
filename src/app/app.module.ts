@@ -10,6 +10,7 @@ import { LogoComponent } from './logo/logo.component';
 import { MenuComponent } from './menu/menu.component';
 import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ContactsComponent } from './contacts/contacts.component';
     AboutComponent,
     ContactsComponent,
     MainComponent,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
