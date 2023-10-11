@@ -1,5 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+
+interface MovieData {
+  '#ACTORS': string;
+  '#AKA': string;
+  '#IMDB_ID': string;
+  '#IMDB_IV': string;
+  '#IMDB_URL': string;
+  '#IMG_POSTER': string;
+  '#RANK': number;
+  '#TITLE': string;
+  '#YEAR': number;
+  photo_height: number;
+  photo_width: number;
+}
 
 @Component({
   selector: 'app-main',
@@ -10,25 +25,30 @@ import { Component } from '@angular/core';
 })
 export class MainComponent {
   public name = 'MainComponent';
-  public data = [
-    {
-      title: 'Матрица',
-      description: 'Киано тащит весь фильм на себе',
-    },
-    {
-      title: 'Хотабыч',
-      description: 'Хороший фильм про деда волшебника',
-    },
-    {
-      title: 'Аладин',
-      description: 'Фильм про джина из лампы',
-    },
-  ];
+  public data: MovieData[] = [];
+  public search: string = '';
 
-  public say(value: string) {
-    console.log(value);
+  constructor(private apiService: ApiService) {}
+
+  getData(search: string): void {
+    this.apiService.getData(search).subscribe((data) => {
+      console.log(data);
+      this.data = data.description;
+      console.log(this.data);
+    });
   }
-  public sayName() {
-    console.log(this.name);
+
+  ngOnInit(): void {
+    this.getData('a');
+  }
+
+  handleSearch(event: Event): void {
+    if (event.target instanceof HTMLInputElement) {
+      this.search = String(event.target.value).trim();
+    }
+  }
+
+  handleClick(): void {
+    this.getData(this.search);
   }
 }
