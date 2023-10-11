@@ -1,8 +1,26 @@
 .main {
-  background-color: var(--primary-background-color);
   min-height: calc(100vh - 140px);
   font-size: 50px;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+  &__title {
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__button {
+    cursor: pointer;
+    border: 1px solid black;
+    width: 150px;
+  }
 }
