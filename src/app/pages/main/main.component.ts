@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { ApiService } from '../../api.service';
 
 interface MovieData {
   '#ACTORS': string;
@@ -31,11 +31,19 @@ export class MainComponent {
   constructor(private apiService: ApiService) {}
 
   getData(search: string): void {
-    this.apiService.getData(search).subscribe((data) => {
-      console.log(data);
-      this.data = data.description;
-      console.log(this.data);
-    });
+    if (search.length) {
+      this.apiService.getData(search).subscribe((data) => {
+        console.log(data);
+        this.data = data.description;
+        console.log(this.data);
+      });
+    } else {
+      this.apiService.getData('a').subscribe((data) => {
+        console.log(data);
+        this.data = data.description;
+        console.log(this.data);
+      });
+    }
   }
 
   ngOnInit(): void {
@@ -46,6 +54,7 @@ export class MainComponent {
     if (event.target instanceof HTMLInputElement) {
       this.search = String(event.target.value).trim();
     }
+    console.log(this.search);
   }
 
   handleClick(): void {
