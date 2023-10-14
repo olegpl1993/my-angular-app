@@ -8,9 +8,18 @@
     />
     <button class="main__button" (click)="handleClick()">Искать</button>
   </div>
-  <div class="main__content">
-    <div class="main__card" *ngFor="let item of data">
-      <app-card [movie]="item"></app-card>
-    </div>
+
+  <div class="main__content" *ngIf="!isLoading; else spinner">
+    <ng-container *ngIf="data.length; else notFound">
+      <div class="main__card" *ngFor="let item of data">
+        <app-card [movie]="item"></app-card>
+      </div>
+    </ng-container>
+    <ng-template #notFound> No results </ng-template>
   </div>
+  <ng-template #spinner>
+    <div class="main__content">
+      <app-spinner></app-spinner>
+    </div>
+  </ng-template>
 </div>

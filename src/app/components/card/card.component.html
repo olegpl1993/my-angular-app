@@ -2,5 +2,7 @@
   <div class="card__title">{{ movie["#TITLE"] }}</div>
   <div class="card__year">{{ movie["#YEAR"] }}</div>
   <div class="card__actors">{{ movie["#ACTORS"] }}</div>
-  <div class="card__imgBox"><img class="card__img" [src]="movie['#IMG_POSTER']" /></div>
+  <a href="{{ movie['#IMDB_URL'] }}" class="card__imgBox" target="_blank">
+    <img class="card__img" [src]="movie['#IMG_POSTER']" />
+  </a>
 </div>
