@@ -1,30 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ApiService } from '../../api.service';
-
-interface MovieData {
-  '#ACTORS': string;
-  '#AKA': string;
-  '#IMDB_ID': string;
-  '#IMDB_IV': string;
-  '#IMDB_URL': string;
-  '#IMG_POSTER': string;
-  '#RANK': number;
-  '#TITLE': string;
-  '#YEAR': number;
-  photo_height: number;
-  photo_width: number;
-}
+import { CardComponent } from 'src/app/components/card/card.component';
+import { MovieData } from 'src/app/types';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CardComponent],
 })
 export class MainComponent {
-  public name = 'MainComponent';
   public data: MovieData[] = [];
   public search: string = '';
 
