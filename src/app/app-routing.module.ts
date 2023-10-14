@@ -5,17 +5,19 @@ const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./main/main.component').then((m) => m.MainComponent),
+      import('./pages/main/main.component').then((m) => m.MainComponent),
   },
   {
     path: 'about',
     loadComponent: () =>
-      import('./about/about.component').then((m) => m.AboutComponent),
+      import('./pages/about/about.component').then((m) => m.AboutComponent),
   },
   {
     path: 'contacts',
     loadComponent: () =>
-      import('./contacts/contacts.component').then((m) => m.ContactsComponent),
+      import('./pages/contacts/contacts.component').then(
+        (m) => m.ContactsComponent
+      ),
   },
   {
     path: '**',

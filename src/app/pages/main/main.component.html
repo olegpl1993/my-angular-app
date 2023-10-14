@@ -1,0 +1,16 @@
+<div class="main">
+  <div class="main__settings">
+    <input
+      type="text"
+      placeholder="Введите название фильма"
+      class="main__input"
+      (input)="handleSearch($event)"
+    />
+    <button class="main__button" (click)="handleClick()">Искать</button>
+  </div>
+  <div class="main__content">
+    <div class="main__card" *ngFor="let item of data">
+      <app-card [movie]="item"></app-card>
+    </div>
+  </div>
+</div>
