@@ -3,32 +3,41 @@ import { Component } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { MovieData } from 'src/app/types';
+import { SpinnerComponent } from 'src/app/components/spinner/spinner.component';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
   standalone: true,
-  imports: [CommonModule, CardComponent],
+  imports: [CommonModule, CardComponent, SpinnerComponent],
 })
 export class MainComponent {
   public data: MovieData[] = [];
   public search: string = '';
+  public isLoading: boolean = false;
 
   constructor(private apiService: ApiService) {}
 
   getData(search: string): void {
+    this.isLoading = true;
     if (search.length) {
-      this.apiService.getData(search).subscribe((data) => {
-        console.log(data);
-        this.data = data.description;
-        console.log(this.data);
-      });
+      this.apiService
+        .getData(search)
+        .pipe(delay(500))
+        .subscribe((data) => {
+          console.log(data);
+          this.data = data.description;
+          console.log(this.data);
+          this.isLoading = false;
+        });
     } else {
       this.apiService.getData('a').subscribe((data) => {
         console.log(data);
         this.data = data.description;
         console.log(this.data);
+        this.isLoading = false;
       });
     }
   }
