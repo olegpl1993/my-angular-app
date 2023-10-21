@@ -2,11 +2,13 @@
   <div class="main__settings">
     <input
       type="text"
-      placeholder="Введите название фильма"
+      placeholder="Введите название"
       class="main__input"
       (input)="handleSearch($event)"
     />
-    <button class="main__button" (click)="handleClick()">Искать</button>
+    <button mat-raised-button class="main__matButton" (click)="handleClick()">
+      Найти
+    </button>
   </div>
 
   <div class="main__content" *ngIf="!isLoading; else spinner">

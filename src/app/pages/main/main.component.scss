@@ -16,22 +16,25 @@
     padding: 10px;
   }
 
-  &__button {
-    cursor: pointer;
-    background-color: var(--primary-color);
-    color: white;
-    width: 70px;
-    height: 30px;
-    border-radius: 5px;
-  }
-
   &__input {
     width: 215px;
-    height: 30px;
-    padding: 0px 5px;
-    font-size: 18px;
-    border: 1px solid var(--border-color);
-    border-radius: 2px;
+    height: 35px;
+    padding: 2px 15px;
+    font-size: 16px;
+    outline: 1px solid var(--border-color);
+    border-radius: 4px;
+
+    &:focus {
+      outline: 1px solid var(--primary-color);
+    }
+  }
+
+  & &__matButton {
+    background-color: var(--primary-color) !important;
+    color: white;
+    font-size: 12px;
+    border-radius: 10px;
+    box-shadow: none;
   }
 
   &__content {
