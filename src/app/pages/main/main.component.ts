@@ -5,13 +5,19 @@ import { CardComponent } from 'src/app/components/card/card.component';
 import { MovieData } from 'src/app/types';
 import { SpinnerComponent } from 'src/app/components/spinner/spinner.component';
 import { delay } from 'rxjs/operators';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
   standalone: true,
-  imports: [CommonModule, CardComponent, SpinnerComponent],
+  imports: [
+    CommonModule,
+    CardComponent,
+    SpinnerComponent,
+    MatButtonModule,
+  ],
 })
 export class MainComponent {
   public data: MovieData[] = [];
