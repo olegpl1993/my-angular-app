@@ -10,6 +10,7 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MovieComponent } from './pages/movie/movie.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     FooterComponent,
     HeaderComponent,
+    MovieComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -20,6 +20,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'movie/:id',
+    loadComponent: () =>
+      import('./pages/movie/movie.component').then((m) => m.MovieComponent),
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full',
