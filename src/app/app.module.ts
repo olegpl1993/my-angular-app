@@ -10,11 +10,9 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MenuComponent } from './header/menu/menu.component';
-import { LogoComponent } from './shared/logo/logo.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LogoComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,7 +23,7 @@ import { LogoComponent } from './shared/logo/logo.component';
     HttpClientModule,
     BrowserAnimationsModule,
     FooterComponent,
-    MenuComponent,
+    HeaderComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
