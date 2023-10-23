@@ -6,6 +6,11 @@
   align-items: center;
   flex-direction: column;
 
+  .test {
+    border: 1px solid red;
+    font-size: 50px;
+  }
+
   &__settings {
     border-bottom: 1px solid var(--border-color);
     width: 100%;
@@ -39,27 +44,12 @@
 
   &__content {
     max-width: 1920px;
+    min-width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 10px;
     padding: 10px 0px;
-  }
-
-  &__card {
-    width: 24%;
-
-    @media (max-width: 1599px) {
-      width: 32%;
-    }
-
-    @media (max-width: 1199px) {
-      width: 46%;
-    }
-
-    @media (max-width: 767px) {
-      width: 94%;
-    }
   }
 }
