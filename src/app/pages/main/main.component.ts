@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ApiService } from '../../api.service';
-import { CardComponent } from 'src/app/components/card/card.component';
+import { CardComponent } from 'src/app/pages/main/card/card.component';
 import { MovieData } from 'src/app/types';
-import { SpinnerComponent } from 'src/app/components/spinner/spinner.component';
+import { SpinnerComponent } from 'src/app/shared/spinner/spinner.component';
 import { delay } from 'rxjs/operators';
 import { MatButtonModule } from '@angular/material/button';
 
