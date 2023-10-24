@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LogoComponent } from '../shared/components/logo/logo.component';
 import { MenuComponent } from '../header/menu/menu.component';
-import { MathService } from '../shared/services/math.service';
+import { MathService } from './math.service';
 
 @Component({
   selector: 'app-header',
